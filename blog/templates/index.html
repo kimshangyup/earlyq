@@ -76,7 +76,7 @@ window.__lo_site_id = 72964;
 <button class="btn btn-default">전송</button>
 </form>
 
-<!--
+{% if request.user.is_staff %}
 <form action="" method="post">
 {% csrf_token %}
 <table class="table">
@@ -86,9 +86,7 @@ window.__lo_site_id = 72964;
 </td>
 </table>
 </form>
-
--->
-
+{% endif %}
 
 {% for post in posts %}
 <h3>{{ post.title }}</h3>
@@ -99,10 +97,11 @@ window.__lo_site_id = 72964;
 {% endfor %}
 </div>
 
-<!--<script>
+{% if request.user.is_staff %}
+<script>
   CKEDITOR.replace( 'text' );
 </script>
--->
+{% endif %}
 
 <div id="footer">
   Copyright @ Earlybird <i class="fa fa-twitter"></i>
