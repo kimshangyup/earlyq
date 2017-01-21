@@ -1,0 +1,106 @@
+<html>
+<head>
+
+<meta content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" name="viewport">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
+<script type='text/javascript'>
+window.__lo_site_id = 72964;
+
+  (function() {
+    var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+    wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+    })();
+  </script>
+
+<style type="text/css">
+.container{
+  max-width:900px;
+}
+#footer{
+  background-color:#444;
+  color:white;
+  padding-top:40px;
+  padding-bottom:40px;
+  padding-right:40px;
+  text-align:right;
+}
+#money{
+  margin:10px auto;
+  width:180px;
+  height:180px;
+}
+#data{
+  width:400px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>MOOC 추천</h1>
+
+<div class="row">
+  <div class="col-sm-8">
+    <h2>
+    핫한 데이터 사이언스, 어떻게 배우나
+    </h2>
+    <p>
+     이 질문은 많은 사람들이 가장 궁금해하는 질문 중 하나이다. 언론과 다양한 매체를 통해 데이터 사이언스가 핫하고, 유망하고, 뭐하는 것인지는 충분히 알게 되었을 것이다. 그런데 이걸 어디서, 어떻게, 배워야 하는 지에 대해 고민한다면, 많은 교육과정이 생성된 미국에 비해 국내에서는 아직 이론과 실무를 아우르는 제대로 된 커리큘럼을 제공하는 프로그램은 많이 부족하다. 그나마 가장 잘 알려진 교육 프로그램 중 하나인 패스트캠퍼스의 데이터 사이언스 스쿨은 수강료가 무려 390만원으로, ‘한번 들어볼까’ 하는 마음가짐으로 듣기엔 역시 부담스러운 금액이다.
+    </p>
+  </div>
+  <div class="col-sm-4">
+    <img src="http://keystroke.kr/wp/wp-content/uploads/2015/03/main.png" id="data">
+  </div>
+</div>
+<hr>
+
+<form action="/blog/email/" method="post">
+{% csrf_token %}
+{{ emailform }}
+<br>
+<button class="btn btn-default">전송</button>
+</form>
+
+<form action="" method="post">
+{% csrf_token %}
+<table class="table">
+{{ form.as_table }}
+<td colspan="2">
+<button class="btn btn-default">글 작성하기</button>
+</td>
+</table>
+</form>
+
+{% for post in posts %}
+<h3>{{ post.title }}</h3>
+<p>
+{{ post.text|safe }}
+</p>
+<hr>
+{% endfor %}
+</div>
+
+<script>
+  CKEDITOR.replace( 'text' );
+</script>
+
+<div id="footer">
+  Copyright @ Earlybird <i class="fa fa-twitter"></i>
+</div>
+</body>
+</html>

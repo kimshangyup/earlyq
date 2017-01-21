@@ -1,0 +1,106 @@
+<html>
+<head>
+
+<meta content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" name="viewport">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
+<script type='text/javascript'>
+window.__lo_site_id = 72964;
+
+  (function() {
+    var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+    wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+    })();
+  </script>
+
+<style type="text/css">
+.container{
+  max-width:900px;
+}
+#footer{
+  background-color:#444;
+  color:white;
+  padding-top:40px;
+  padding-bottom:40px;
+  padding-right:40px;
+  text-align:right;
+}
+#money{
+  margin:10px auto;
+  width:180px;
+  height:180px;
+}
+#data{
+  width:400px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>MOOC 추천</h1>
+
+<div class="row">
+<div class="col-sm-4">
+<img id="money" src="https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/oZ3/image/bycsY3VA7ThAdlNONzqJPJt3XxY">
+</div>
+<div class="col-sm-8">
+<h2>
+수강료 400만원 데이터사이언스 스쿨 커리큘럼을 대체하는 온라인 무료강의 15개 커리큘럼
+</h2>
+<p>
+ ‘바야흐로 데이터의 시대다'라고 할 만큼 이제는 IT뿐만 아니라 모든 업계에서 데이터의 중요성이 부각되고 있다. 아시다시피, 미국의 많은 대학과 교육기관은 앞다투어 데이터 사이언스와 관련된 학과, 교육 과정을 개설하고 있으며, 국내에서는 실무 교육 스타트업인 패스트캠퍼스가 데이터 사이언스 부트캠프인 데이터 사이언스 스쿨을 운영하고 있다. 이제는 채용 시장에서도 ‘데이터 OOO’ 구인 글이 확연히 증가했음을 알 수 있다.
+</p>
+</div>
+
+</div>
+<hr>
+
+<form action="/blog/email/" method="post">
+{{ emailform }}
+<br>
+<button class="btn btn-default">전송</button>
+</form>
+
+<form action="" method="post">
+{% csrf_token %}
+<table class="table">
+{{ form.as_table }}
+<td colspan="2">
+<button class="btn btn-default">글 작성하기</button>
+</td>
+</table>
+</form>
+
+{% for post in posts %}
+<h3>{{ post.title }}</h3>
+<p>
+{{ post.text|safe }}
+</p>
+<hr>
+{% endfor %}
+</div>
+
+<script>
+  CKEDITOR.replace( 'text' );
+</script>
+
+<div id="footer">
+  Copyright @ Earlybird <i class="fa fa-twitter"></i>
+</div>
+</body>
+</html>
