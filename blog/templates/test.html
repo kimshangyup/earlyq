@@ -1,3 +1,4 @@
+{% load staticfiles  %}
 <html>
 <head>
 
@@ -47,11 +48,51 @@ window.__lo_site_id = 72964;
 #data{
   width:400px;
 }
+label{
+  display:none;
+}
+.container>img{
+  width:100%;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+p{
+  text-indent:14px;
+  line-height:170%;
+  font-size:18px;
+}
+.receiver{
+  padding:40px;
+  background-color:#eee;
+}
+.btn-default{
+  float:right;
+}
+hr{
+  margin-top:60px;
+  margin-bottom:60px;
+}
+h4{
+  margin-top:40px;
+  font-size:24px;
+}
+h1{
+  margin-top:100px;
+  margin-bottom:20px;
+}
+li{
+  margin-left:40px;
+  margin-top:-10px;
+}
+li>a{
+  font-size:16px;
+}
 </style>
 </head>
 <body>
 
 <div class="container">
+<!--
 <h1>MOOC 추천</h1>
 
 <div class="row">
@@ -68,16 +109,198 @@ window.__lo_site_id = 72964;
   </div>
 </div>
 <hr>
+-->
+
+<h1> 수강료 400만원 데이터사이언스 스쿨 커리큘럼을 대체하는 온라인 무료강의 15개 커리큘럼</h1>
+<p> ‘바야흐로 데이터의 시대다'라고 할 만큼 이제는 IT뿐만 아니라 모든 업계에서 데이터의 중요성이 부각되고 있다. 아시다시피, 미국의 많은 대학과 교육기관은 앞다투어 데이터 사이언스와 관련된 학과, 교육 과정을 개설하고 있으며, 국내에서는 실무 교육 스타트업인 패스트캠퍼스가 데이터 사이언스 부트캠프인 데이터 사이언스 스쿨을 운영하고 있다. 이제는 채용 시장에서도 ‘데이터 OOO’ 구인 글이 확연히 증가했음을 알 수 있다. </p>
+<br>
+<h2>핫한 데이터 사이언스, 어떻게 배우나</h2>
+<p> 이 질문은 많은 사람들이 가장 궁금해하는 질문 중 하나이다. 언론과 다양한 매체를 통해 데이터 사이언스가 핫하고, 유망하고, 뭐하는 것인지는 충분히 알게 되었을 것이다. 그런데 이걸 어디서, 어떻게, 배워야 하는 지에 대해 고민한다면, 많은 교육과정이 생성된 미국에 비해 국내에서는 아직 이론과 실무를 아우르는 제대로 된 커리큘럼을 제공하는 프로그램은 많이 부족하다. 그나마 가장 잘 알려진 교육 프로그램 중 하나인 패스트캠퍼스의 데이터 사이언스 스쿨은 수강료가 무려 390만원으로, ‘한번 들어볼까’ 하는 마음가짐으로 듣기엔 역시 부담스러운 금액이다.
+</p>
+<img src="{% static 'fast.png' %}" alt="">
+
+<h2>MOOC 무료 온라인 강의로 재구성해 본 데이터 사이언스 무료 코스</h2>
+
+<p>
+   그래서 한 번 다양한 부트캠프 프로그램이 제공하는 커리큘럼을 모아서, 그 커리큘럼 내용을 온라인 무료 강의들로 재구성하였다. 일부는 제가 직접 들어봤거나 직접 들어본 지인들의 추천을 받아 구성하였고, 일부는 구글링을 통해 평가가 좋은 강의들로 재구성하였다.
+</p>
+
+<div class="receiver">
+<h3>다음 커리큘럼 받아보기</h3>
+앞으로도 여러 커리큘럼을 분석하여 추가적인 온라인 무료 강의들을 추천할 계획입니다.<br>빠르게 받아보고 싶으시다면 이메일을 남겨주세요.<br>
+<form action="/blog/email/" method="post">
+{% csrf_token %}
+{{ emailform }}
+<br>
+<button class="btn btn-default">이메일 남기기</button>
+</form>
+</div>
+
+<hr>
+<p>
+본 커리큘럼은 페스트 캠퍼스의 데이터 사이언스 스쿨 커리큘럼을 무료 MOOC 강좌들로 재구성한 것이다.
+</p>
+
+<h4>
+1. 통계학 기초
+</h4>
+<p>
+Mit Open Courseware
+<li>
+<a target="_blank" href="https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/index.htm">Introduction to Probability and Statistics</a>
+</li>
+</p>
+
+<p>
+MIT에서 제공하는 기초 통계학 강좌이다. 주로 PDF로 구성되어 있으며 중간중간 퀴즈가 제공된다. 통계학의 핵심적인 내용을 잘 정리해둔 강좌로, Assignment와 Exam에 나온 문제들만 익숙하게 풀 수 있도록 공부하면 앞으로 데이터 사이언스를 공부하는데 든든한 버팀목이 될 것이다.
+1-4주차는 기본적인 내용이라 통계학에 익숙한 사람은 넘겨도 되고, 5-8주차는 꼭 한번 풀어볼 것을 권한다. 9주차 이후부터는 Bayesian Inference와 NHST(Null Hypothesis Significance Testing), regression 등 심화내용이 나오는데 여유가 없거나 내용을 따라가기 어렵다면 넘겨도 좋다. 추후에 머신러닝 분야를 깊게 공부하고 싶다면 꼭 짚고 넘어 가보길 바란다.
+</p>
+
+<h4>2. 선형대수학 기초</h4>
+
+<p>
+Texas University
+<li>
+<a target="_blank" href="https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x">Linear Algebra - Foundations to Frontiers</a>
+</li>
+</p>
+
+<p>
+통계학과 마찬가지로 선형대수학은 빼놓을 수 없는 필수 과목이다. 위 강좌는 군더더기 없이 필요한 내용만 담았다.
+</p>
+
+<img src="{% static 'texas.png' %}" alt="">
+<텍사스 대학에서 제공하는 선형 대수 강의. 무료>
+
+<h4>
+3. 파이썬 기초
+</h4>
+
+<p>
+ 데이터 사이언티스트를 얘기할 때, 프로그래밍 언어를 빼고 얘기할 수 없다. 파이썬, R, 포트란, SAS, SPSS 등 다양한 언어들이 있지만 모두 한번에 공부할 수는 없고, 최근에 많이 사용하는 파이썬 정도면 시작단계에서 충분한 언어이다. 프로그래밍 언어는 강의를 들어서 배우기보다 혼자 많은 실습을 통해 익숙해지는게 중요하다. 아래 강좌들을 가볍게 살펴보고 실습을 많이 해보는 것을 추천한다.
+</p>
+
+<p>
+이전에 프로그래밍 언어를 접한 적이 없다면, 코드카데미의 <a target="_blank" href="https://www.codecademy.com/learn/python">‘기초 파이썬’</a> 강좌를 추천한다. 한줄 한줄 적어가면서 쉽게 따라갈 수 있게 구성되어 있다.
+</p>
+
+<p>
+<a target="_blank" href="http://cs231n.github.io/python-numpy-tutorial/">Python Numpy</a>는 파이썬에서 빅데이터를 다루기 위한 라이브러리이다. 기본적으로 성능이 빠르지 않은 파이썬을 빅데이터 분석이 가능한 정도로 끌어올린 장본인이다. Numpy를 얼마나 잘 사용하는지에 따라 성능이 천차만별로 달라질 수 있다.
+</p>
+
+
+<img src="{% static 'numpy.png' %}" alt="">
+<파이썬의 데이터 분석 라이브러리 Numpy 튜토리얼>
+
+<h5>
+점프 투 파이썬
+</h5>
+<p>
+기초 - <a target="_blank" href="https://wikidocs.net/book/1">점프 투 파이썬</a>.
+파이썬을 사용하면서 한번씩 문법이 기억나지 않을 때 찾아보기 좋은 reference book이다.
+</p>
+
+<h4>
+4. 검정 및 추정 (확률론)
+</h4>
+
+<p>
+우리가 데이터를 분석하는 근본적인 이유는 그 데이터를 바탕으로 새로운 정보를 얻기 위해서이다. 이는 가설 설정과 데이터를 통한 가설 검정이라는 비교적 단순한 과정으로 통해 이루어지는데, 이를 체계적으로 학문화 시킨 것이 <a target="_blank" href="https://www.coursera.org/learn/statistical-inference">Statistical Inference</a> 이다.
+</p>
+
+<h4>
+5. Machine Learning 기초
+</h4>
+<p>
+ 인공지능이 새로운 화두로 떠오르면서 머신러닝은 가장 핫한 분야가 되었다. 머신러닝은 공학에서 우선적으로 발전시킨 분야로 데이터 사이언스를 통계학과 분리시키는데 큰 역할을 했다. 기존의 통계가 통계학이 제공하는 이론적 틀을 바탕으로 컴퓨터를 활용해 원하는 계산을 했다면, 머신 러닝은 수 많은 데이터를 던져주면 컴퓨터가 이 데이터를 바탕으로 학습을 하는 형태이다. 데이터 사이언스 분야에서 머신 러닝의 비중은 아직 크지 않다. 그러나 앞으로 더 커질 것으로 전망된다.
+</p>
+
+<p>
+<a target="_blank" href="https://www.coursera.org/learn/machine-learning/home/welcome">Machine Learning
+</a>
+</p>
+
+<p>
+1-3주차는 단순선형회귀를 비롯하여 다중선형회귀, 로지스틱 회귀 등을 배운다. 이는 머신러닝의 기초인 동시에 통계학에서 이미 다루고 있는 주제이다.
+7-8주차는 SVM(Support Vector Machine)을 통해 Classification 기법과 Unsupervised Learning에 대한 소개이다. 머신러닝의 개념을 익힌다는 차원에서 위 주차들은 꼭 듣기를 추천한다.
+그 후 머신러닝에 추가적인 관심이 생긴 경우, 남은 4-6주차와 9-11주차도 들어보면 좋을 것이다.
+</p>
+
+<img src="{% static 'ml.png' %}" alt="">
+<Stanford가 제공하는 머신러닝 강의. 그 유명한 앤드류 응의 수업이다>
+
+<h4>
+6. 데이터베이스 기초
+</h4>
+
+<p>
+ 데이터 분석의 이론적인 기법을 제공해 주는 것이 통계학이라면, 데이터베이스는 실제로 데이터를 컴퓨터에서 어떻게 관리하고 처리하는지를 다룬다. 작은 데이터를 다룰 때는 그냥 파일에 데이터를 저장해도 문제가 없지만, 10만, 100만 이상의 데이터를 다루다보면 데이터베이스는 필수이다. ‘Using Database with Python’은 파이썬에 익숙한 사람들이 데이터베이스를 배우기 적절한 강좌이다. 1-4주차는 꼭 들어보고, 여유가 된다면 5주차도 살펴보라. 두번째는 RDB(Relational Database)와 NoSql의 특장점을 비교한 자료이다. NoSql은 최근에 빠르게 성장하고 있는 데이터베이스의 종류로 전통적인 RDB에 비해 유연한 관리가 가능하고, 특정 상황에서는 더 높은 성능을 보인다.
+</p>
+
+<p>
+<a target="_blank" href="https://www.coursera.org/learn/python-databases">https://www.coursera.org/learn/python-databases</a>
+
+<br>
+기초 - 1주차 <br>
+필수 - 2-4주차 <br>
+심화 - 5주차 <br>
+
+심화 - RDBMS vs NoSql https://realpython.com/blog/python/introduction-to-mongodb-and-python/
+</p>
+
+<h4>
+7. 데이터 시각화
+</h4>
+
+<p>
+데이터 시각화는 분석된 결과를 시작적으로 적절하게 보여주는 것이다. 단순히 예쁘게 보여주는 것을 넘어 데이터 속에서 새로운 인사이트를 뽑아낼 수 있도록 해준다.
+</p>
+
+<p>
+<a target="_blank" href="https://www.coursera.org/learn/data-visualization">필수</a><br>
+<a target="_blank" href="https://www.coursera.org/learn/datavisualization"> &nbsp;&nbsp;&nbsp;심화</a>
+</p>
+
+<h4>
+8. 파이썬을 통한 데이터 분석 실습
+</h4>
+
+<p>
+데이터 분석은 데이터사이언스의 코어라고 할 수 있다. 또한 이전의 강좌들을 통해 익힌 지식이 총동원되는 분야이기도 하다. 통계학과 선형대수학은 데이터 분석의 이론적 틀을 제공해주며, 프로그래밍 언어와 데이터베이스를 통해 실제로 컴퓨터를 사용한 분석을 가능하게 한다. 때문에, 위의 기초가 부실한 상황에서 데이터 분석을 공부하는 것은 수박 겉핥기에 불과하다.
+</p>
+
+<p>
+<a target="_blank" href="https://www.coursera.org/learn/python-data-processing">Data Processing Using Python</a>
+</p>
+
+<p>
+위 강좌는 데이터 분석에 대한 이론적으로 어려운 내용을 담고 있지 않으면서도 실습에 필요한 내용들을 많이 담고 있다. 1주차는 프로그래밍 언어에 대한 소개, 2주차는 필요한 데이터를 파이썬을 통해 수집하는 방법을 소개한다. 3주차에서는 수집한 데이터를 잘 처리하기 위해 필요한 자료구조, 파이썬 라이브러리들을 알려준 뒤, 4주차에서 실제 데이터를 분석한다. 짧은 강좌에 지금까지 배운 프로그래밍 언어, 기초 통계학 지식, 데이터 분석과 시각화 등 많은 내용을 종합해서 실습해볼 수 있다.
+</p>
+
+<h4>
+9. Deep Learning
+</h4>
+
+<p>
+머신러닝 분야를 더 깊게 공부해보고 싶다면 <a target="_blank" href="http://cs231n.stanford.edu">Stanford에서 제공하는 CS231n 강좌</a>를 추천한다. Deep Learning은 바둑 AI 알파고의 기본이 되는 기법인 동시에 머신러닝에서도 가장 핫한 분야이다. 1-7주차까지는 비교적 따라가기 쉽고, 그 이후로는 다소 어려울 수 있다.
+</p>
+
+
+<div class="receiver">
+<h3>다음 커리큘럼 받아보기</h3>
+앞으로도 여러 커리큘럼을 분석하여 추가적인 온라인 무료 강의들을 추천할 계획입니다. <br>빠르게 받아보고 싶으시다면 이메일을 남겨주세요. <br>
 
 <form action="/blog/email/" method="post">
 {% csrf_token %}
 {{ emailform }}
 <br>
-<button class="btn btn-default">전송</button>
+<button class="btn btn-default">이메일 남기기</button>
 </form>
+</div>
+
+
 
 {% if request.user.is_staff %}
-
 <form action="" method="post">
 {% csrf_token %}
 <table class="table">
@@ -89,6 +312,7 @@ window.__lo_site_id = 72964;
 </form>
 {% endif %}
 
+<!--
 {% for post in posts %}
 <h3>{{ post.title }}</h3>
 <p>
@@ -96,6 +320,8 @@ window.__lo_site_id = 72964;
 </p>
 <hr>
 {% endfor %}
+-->
+
 </div>
 
 {% if request.user.is_staff %}
