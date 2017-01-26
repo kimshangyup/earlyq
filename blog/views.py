@@ -25,6 +25,10 @@ def yoonzi4(request):
     return render(request, 'yoonzi4.html', locals())
 
 
+def yoonzi5(request):
+    return render(request, 'yoonzi5.html', locals())
+
+
 @csrf_protect
 def index(request):
     form = PostForm(request.POST or None)
