@@ -1,0 +1,105 @@
+{% load staticfiles %}
+<html>
+<head>
+<meta content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" name="viewport">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style type="text/css">
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+.container{
+  text-align:center;
+  padding-top:40px;
+}
+h1, h2, h3, h4, h5, h6, p{
+  font-family: 'Nanum Myeongjo', serif;
+}
+img{
+    width:100%;
+}
+p{
+  margin-top:40px;
+  margin-bottom:40px;
+  font-size:16px;
+  line-height:180%;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>왜 나는 너를 사랑하는가</h1>
+<p>내가 윤지를 사랑하는 이유</p>
+
+<hr>
+
+<img src="{% static 'most.PNG' %}">
+<p>제일 좋아하는 사진</p>
+
+<p>
+왜 나는 너를 사랑하는가 <br>
+지금 내가 너가 보고싶고 너무 좋은 이유<br>
+한마디로 하면 사랑스럽다
+</p>
+
+<img src="{% static 'yoonziat.jpeg' %}">
+<p>
+예쁘고<br>착하고<br>귀엽고<br>열심히 살고<br>생각도 깊고<br>
+고민도 잘 들어주고<br>다시 예쁘고<br>맛있는 것도 잘 먹고<br>
+옷도 잘 입고<br>운동도하고<br>예쁘고<br>귀엽기도 한데
+</p>
+
+<img src="{% static 'airport.jpeg' %}">
+<p>
+<strong>사랑스러운 것</strong>이 가장 크다<br>
+중국말로 귀엽다를 可爱 한자를 직역하면<br> 사랑스럽다 라고 하는데<br>
+내 생각에 귀여운 것과 사랑스러운 것은<br> 엄연히 다르다(단호)<br><br>
+귀여운 것은 토끼이모티콘이나<br> 고양이도 귀엽잖아
+</p>
+<img src="{% static 'couple.jpeg' %}">
+<p>
+사랑스럽다는 것은<br>
+가만 보고 있고 싶고<br>
+보고 있으면 입꼬리가 올라가고<br>
+엄빠미소가 지어지는 것<br>
+정말 보고싶은 것
+</p>
+<img src="{% static 'mak.JPG' %}">
+<p>
+음 그리고<br>
+말투도 귀엽다<br> 영화취향도 비슷한 것 같다<br> 성실하다<br>
+배려심이 깊다<br> 자긴 아니라 그러지만 똑똑하다<br>
+작은 것에 만족할 줄 아는 모습에 자꾸 챙겨주고 싶다<br>
+배우려고 하는 마음에 자꾸 알려주고 싶다<br>
+</p>
+
+사랑해<br>
+그리고 생일 축하해<br>
+태어나 줘서 고마워
+
+
+<!--<p>
+<a href="/yoonzi2">
+  다음 화에 계속
+  <br>
+  To be Continued...
+</a>
+</p>-->
+<p>
+<a href="/yoonzi3">이전 화 보기</a>
+</p>
+
+
+</div>
+
+</body>
+</html>

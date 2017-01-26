@@ -5,6 +5,26 @@ from blog.models import Post
 from django.views.decorators.csrf import csrf_protect
 
 
+def yoonzi(request):
+    return render(request, 'yoonzi.html', locals())
+
+
+def yoonzi1(request):
+    return render(request, 'yoonzi1.html', locals())
+
+
+def yoonzi2(request):
+    return render(request, 'yoonzi2.html', locals())
+
+
+def yoonzi3(request):
+    return render(request, 'yoonzi3.html', locals())
+
+
+def yoonzi4(request):
+    return render(request, 'yoonzi4.html', locals())
+
+
 @csrf_protect
 def index(request):
     form = PostForm(request.POST or None)
