@@ -1,0 +1,309 @@
+{% load staticfiles %}
+<html>
+<head>
+
+<meta content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" name="viewport">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
+<script type='text/javascript'>
+window.__lo_site_id = 72964;
+
+  (function() {
+    var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+    wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+    })();
+  </script>
+
+<style type="text/css">
+.container{
+  max-width:900px;
+}
+#footer{
+  background-color:#444;
+  color:white;
+  padding-top:40px;
+  padding-bottom:40px;
+  padding-right:40px;
+  text-align:right;
+}
+#money{
+  margin:10px auto;
+  width:180px;
+  height:180px;
+}
+#data{
+  width:400px;
+}
+label{
+  display:none;
+}
+.container>img, img{
+  width:100%;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+p{
+  text-indent:14px;
+  line-height:170%;
+  font-size:18px;
+}
+.receiver{
+  padding:40px;
+  background-color:#eee;
+}
+.btn-default{
+  float:right;
+}
+hr{
+  margin-top:60px;
+  margin-bottom:60px;
+}
+h4{
+  margin-top:40px;
+  font-size:24px;
+}
+h1{
+  margin-top:100px;
+  margin-bottom:20px;
+}
+li{
+  margin-left:40px;
+  margin-top:-10px;
+}
+li>a{
+  font-size:16px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<!--
+
+<h1>MOOC 추천</h1>
+
+<div class="row">
+<div class="col-sm-4">
+<img id="money" src="https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/oZ3/image/bycsY3VA7ThAdlNONzqJPJt3XxY">
+</div>
+<div class="col-sm-8">
+<h2>
+수강료 400만원 데이터사이언스 스쿨 커리큘럼을 대체하는 온라인 무료강의 15개 커리큘럼
+</h2>
+<p>
+ ‘바야흐로 데이터의 시대다'라고 할 만큼 이제는 IT뿐만 아니라 모든 업계에서 데이터의 중요성이 부각되고 있다. 아시다시피, 미국의 많은 대학과 교육기관은 앞다투어 데이터 사이언스와 관련된 학과, 교육 과정을 개설하고 있으며, 국내에서는 실무 교육 스타트업인 패스트캠퍼스가 데이터 사이언스 부트캠프인 데이터 사이언스 스쿨을 운영하고 있다. 이제는 채용 시장에서도 ‘데이터 OOO’ 구인 글이 확연히 증가했음을 알 수 있다.
+</p>
+</div>
+
+</div>
+<hr>
+-->
+
+<h1>데이터 실무자들이 추천하는 데이터 사이언스 온라인 무료 강의 13개</h1>
+
+<p>
+몇 년 전부터 ‘빅 데이터', ‘머신 러닝' 등의 키워드가 주목을 받으면서 데이터 사이언스에 대한 관심이 매우 높아지고 있다. 관련분야 전공자뿐만 아니라 비전공자들도 data science 분야에 대해 알고 싶어한다. 이렇듯 관심이 높아지고 있는데, 그렇다면 실제 데이터 사이언스 분야의 실무자들은 데이터 사이언티스트의 필요 역량을 무엇이라 생각할까? 과연 어떤 공부를 해야 데이터 사이언스를 이해할 수 있는 것일까?
+</p>
+
+<h2>
+강의는 많은데, 뭘 들어야 하나?
+</h2>
+
+<p>
+ 데이터 사이언스에 관해 공부하고자 한다면, 한 번 쯤 미국의 유명 대학 강의들을 중심으로 빠르게 성장하고 있는 MOOC(Massive Open Online Course) 플랫폼이나 DataCamp, Udemy처럼 부분 무료 강의를 제공하는 플랫폼을  들어 봤을 것이다. 혹은 유튜브와 구글에서 검색만 잘 해도 다양한 무료 강의를 찾을 수 있다.
+</p>
+
+<img src="{% static 'nemo.png' %}">
+<Coursera에서 Data Science라고 검색한 결과. 결과값만 611개가 나온다(...)>
+
+<p>
+ 문제는, 강의가 많아도 너무 많아 좋은 강의를 선별하기 어렵다는 점이다. 같은 내용을 다룬 강의가 온라인에 몇 개씩 있는데, 입문자의 입장에서는 이 중에 어떤 강의를 선택해서 들어야 가장 효과가 좋을지, 혹은 이 강의 다음엔 무엇을 들어야 할지 좋을 지 등 여러 고민이 생긴다.
+</p>
+
+<p>
+그래서 실무자에게 직접 물어봤습니다
+</p>
+
+<p>
+ 그래서 데이터 사이언티스트, 데이터 애널리스트, 데이터 엔지니어 등의 직무를 달고 현업에서 일하는 몇 몇 지인에게 직접 물어봤다. “직무와 관련하여 온라인 강의를 들어봤면 어떤 강의를 추천하시나요?” 심층 인터뷰 끝에 실무자들에게 추천받은 강의와 추천하는 이유등을 모아보니 하나의 커리큘럼처럼 구성할 수 있었다.
+</p>
+
+<div class="receiver">
+<h3>다음 커리큘럼 받아보기</h3>
+앞으로도 여러 커리큘럼을 분석하여 추가적인 온라인 무료 강의들을 추천할 계획입니다.<br>빠르게 받아보고 싶으시다면 이메일을 남겨주세요.<br>
+<form action="/blog/email/" method="post">
+{% csrf_token %}
+{{ emailform }}
+<br>
+<button class="btn btn-default">이메일 남기기</button>
+</form>
+</div>
+
+<h4>
+1. 프로그래밍 언어
+</h4>
+<p>
+ 데이터 사이언티스트를 꿈꾼다면 프로그래밍 언어를 모를 수 없다. 파이썬, R, 포트란, SAS, SPSS 등 다양한 언어들이 있지만 모두 한번에 공부할 수는 없고, 최근에 많이 사용하는 파이썬과 R 정도로 시작해도 충분하다. 프로그래밍 언어는 강의를 들어서 배우기보다 혼자 많은 실습을 통해 익숙해지는게 중요하다. 아래 강좌들을 가볍게 살펴보고 실습을 많이 해보자.
+</p>
+
+
+<strong>파이썬</strong><br>
+<a href="https://www.codecademy.com/courses/introduction-to-python-6WeG3/0/1?curriculum_id=4f89dab3d788890003000096">Codeacademy</a>
+
+<p>
+이전에 프로그래밍 언어를 접한적인 없다면, 코드카데미를 추천한다. 한줄 한줄 적어가면서 쉽게 따라갈 수 있게 구성되어 있다.
+</p>
+
+<p>
+<a href="http://cs231n.github.io/python-numpy-tutorial/">Python Numpy</a>는 파이썬에서 빅데이터를 다루기 위한 라이브러리이다. 기본적으로 성능이 빠르지 않은 파이썬을 빅데이터 분석이 가능한 정도로 끌어올린 장본인이다. Numpy를 얼마나 잘 사용하는지에 따라 성능이 천차만별로 달라질 수 있다.
+</p>
+
+<strong>R</strong><br>
+<a href="https://www.coursera.org/learn/r-programming">Coursera ‘R Programming'</a>
+
+<br><br>
+<a href="https://www.coursera.org/specializations/statistics">Coursera 'Master Statistics with R’</a>
+
+
+
+<img src="{% static 'r.png' %}">
+<이미지 : Coursera R programming 페이지 캡쳐, 코멘트 : 코세라에 올라와있는 좐홉킨스 대학의 R 강의. 무료>
+
+<h4>2. 통계학</h4>
+
+<p>
+ 데이터 사이언스가 다양한 분야의 융복합 학문이지만, 그 중 가장 중요한 분야를 꼽자면 단연 통계학이다. 통계학은 오래전부터 데이터를 다루는 학문이고 좁은 의미에서 데이터 사이언스는 큰 데이터를 다루는 통계학에 불과하다. 그러니 기초적인 통계학 지식은 필수이고 더 깊게 공부하는 것을 강력하게 추천한다.
+</p>
+
+
+통계학 기초
+<a href="https://classroom.udacity.com/courses/st101/lessons/48686797/concepts/486995140923">Udacity ‘Intro to Statistics'</a>
+
+<br>
+Mit Open Courseware
+<a href="https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/index.htm">Introduction to Probability and Statistics</a>
+
+
+<img src="{% static 'mit.png' %}">
+<이미지 : 위에꺼, 텍스트 : MIT가 제공하는 확률과 통계 입문과정. 신뢰가 가는 웹사이트 디자인이 인상적이다>
+
+<br>
+통계학 심화
+<a href="https://www.udacity.com/course/intro-to-inferential-statistics--ud201">Udacity ‘Intro to Inferential Statistics’</a>
+
+
+Texas University
+<a href="https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x">Linear Algebra - Foundations to Frontiers</a>
+
+<h4>
+3. 데이터베이스
+</h4>
+
+<p>
+통계학이 데이터 분석에 대한 이론적인 지식을 제공해주는 것이라면, 데이터베이스는 데이터 관리와 처리를 담당한다. 작은 데이터를 다룰 때는 그냥 파일에 데이터를 저장해도 문제가 없지만, 10만, 100만 이상의 데이터를 다루다보면 데이터베이스는 필수이다. ‘Using Database with Python’은 파이썬에 익숙한 사람들이 데이터베이스를 배우기 적절한 강좌이다. 두번째 강좌는 MySQL을 사용해서 빅데이터를 분석하는 강좌로 역시나 데이터베이스 입문에 좋은 강좌이다.
+</p>
+
+<a href="https://www.coursera.org/learn/python-databases">Coursera 'Using Databases with Python'</a>
+
+<a href="https://www.coursera.org/learn/analytics-mysql">Coursera 'Managing Big Data with MySQL’</a>
+
+<h4>
+4. 데이터 분석 및 시각화
+</h4>
+<p>
+데이터 분석은 데이터사이언스의 코어라고 할 수 있다. 또한 이전의 강좌들을 통해 익힌 지식이 총동원되는 분야이기도 하다. 통계학과 선형대수학은 데이터 분석의 이론적 틀을 제공해주며, 프로그래밍 언어와 데이터베이스를 통해 실제 컴퓨터를 사용한 분석을 가능하게 한다. 때문에, 위의 기초가 부실한 상황에서의 데이터 분석을 공부하는 것은 수박 겉핥기에 불과하다.
+데이터 시각화는 분석된 결과를 적절하게 보여주는 것이다. 시각화를 단순히 예쁘게 보여주는 것을 넘어 데이터 속에서 새로운 인사이트를 뽑아낼 수 있도록 해준다.
+</p>
+
+<a href="https://www.udacity.com/course/intro-to-data-analysis--ud170">Udacity ‘Intro to Data Analysis’</a>
+
+<img src="{% static 'da.png' %}">
+<이미지 : Udacity Intro to Data Analysis 캡쳐, 텍스트 : Udacity에 올라온 데이터 분석 기초 과정. Facebook과 mongoDB에서 제공하는 강의>
+<a href="https://www.coursera.org/learn/datavisualization">Coursera ‘Data Visualization'</a>
+
+<a href="https://www.coursera.org/learn/python-data-processing">Coursera 'Data Processing Using Python'</a>
+
+<h4>
+5. Machine Learning
+</h4>
+<p>
+인공지능이 최근 새로운 화두로 떠오르면서 머신러닝은 가장 핫한 분야가 되었다. 머신러닝은 공학에서 우선적으로 발전시킨 분야로써, 데이터 사이언스를 ‘통계학’과 분리시키는데 큰 역할을 했다. 기존의 통계가 통계학의 이론적 틀을 바탕으로 원하는 계산을 했다면, 머신러닝은 수많은 데이터를 컴퓨터 학습할 수 있게 하는 형태이다. 데이터 사이언스 분야에서 머신러닝의 비중은 아직 크지 않다. 그러나 앞으로 더 커질 것으로 전망된다.
+</p>
+
+<a href="https://www.coursera.org/learn/machine-learning/home/welcome">머신러닝</a>
+
+<a href="http://cs231n.stanford.edu">
+딥러닝
+</a>
+
+<div class="receiver">
+<h3>다음 커리큘럼 받아보기</h3>
+앞으로도 여러 커리큘럼을 분석하여 추가적인 온라인 무료 강의들을 추천할 계획입니다.<br>빠르게 받아보고 싶으시다면 이메일을 남겨주세요.<br>
+<form action="/blog/email/" method="post">
+{% csrf_token %}
+{{ emailform }}
+<br>
+<button class="btn btn-default">이메일 남기기</button>
+</form>
+</div>
+
+{% if request.user.is_staff %}
+<form action="" method="post">
+{% csrf_token %}
+<table class="table">
+{{ form.as_table }}
+<td colspan="2">
+<button class="btn btn-default">글 작성하기</button>
+</td>
+</table>
+</form>
+{% endif %}
+<!--
+{% for post in posts %}
+<h3>{{ post.title }}</h3>
+<p>
+{{ post.text|safe }}
+</p>
+<hr>
+{% endfor %}
+-->
+
+</div>
+
+{% if request.user.is_staff %}
+<script>
+  CKEDITOR.replace( 'text' );
+</script>
+{% endif %}
+
+<div id="footer">
+  Copyright @ Earlybird <i class="fa fa-twitter"></i>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90619464-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>
