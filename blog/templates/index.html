@@ -17,50 +17,101 @@
   crossorigin="anonymous"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<title>My Resume | Shangyup Kim</title>
+<meta name="title" content="My Resume | Shangyup Kim">
+<meta name="description" content="Loving Product and Early Stage Startup">
 <style type="text/css">
-  *{
-    font-family: 'Open Sans', sans-serif;
+  @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lobster|Poiret+One|Quicksand|Shadows+Into+Light');
+  body{
+    font-family: 'Quicksand', sans-serif;
+    text-align:center;
+    color:#444;
+  }
+  .profile{
+    width:60px;
+    height:60px;
+    border-radius:100%;
+    background-image: url("{% static 'profile.png' %}");
+    background-size:100%;
+  }
+  .rec{
+    width:400px;
+  }
+  li{
+    text-align:left;
+    list-style-type: none;
+  }
+  .table, ul{
+      margin:0 auto;
+      max-width:600px;
+      text-align:left;
+  }
+  h2{
+    /*font-family: 'Shadows Into Light', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Quicksand', sans-serif;*/
+    font-family: 'Lobster', cursive;
+    color:#333;
+    /*font-family: 'Poiret One', cursive;*/
+  }
+  h4{
+    font-family: 'Lobster', cursive;
+    color:#333;
+  }
+  .highlight{
+    background-color:yellow;
   }
 </style>
 </head>
 <body>
 
 <div class="container">
-<h2>Shangyup Kim</h2>
-<img src="{% static 'flag.png' %}">
-<li>Email: <a href="mailto:kmn1120@naver.com">kmn1120@naver.com</a></li>
-<li>Tel: +82 10 4580 4121</li>
-<li>Github: <a target="_blank" href="https://github.com/kimshangyup/">https://github.com/kimshangyup/</a></li>
-<li>Linkedin : <a target="_blank"  href="https://www.linkedin.com/in/shangyup-kim-010b21112/">https://www.linkedin.com/in/shangyup-kim-010b21112/</a></li>
-
+<br>
+<img src="{% static 'motto.png' %}">
+<h2><img class="profile"><br> Shangyup Kim</h2>
+<br>
 <h4>Summary</h4>
-
-
+Half developer, half business guy <br>
+Love <span class="highlight">"Product"</span>, and to make sth new <br>
+Specialized in Accelerating for <span class="highlight">early stage</span><br>
+Hope to Read and Write, Discuss everyday
+<hr>
 <h4>Technical Skills</h4>
-<li>Languages : C++, Python, SQL, HTML, CSS, javascript, jQuery</li>
-<li>Framework: Django, Crosswalk, AngularJS, Ionic</li>
-<li>DB: MySQL</li>
-
+<img class="rec" src="{% static 'code.png' %}">
+<br><br>
+<ul>
+<li><i class="fa fa-comment"></i> Languages : C++, <span class="highlight">Python</span>, SQL, HTML, CSS, javascript, jQuery</li>
+<li><i class="fa fa-flask"></i> Framework: <span class="highlight">Django</span>, Crosswalk, AngularJS, Ionic</li>
+<li><i class="fa fa-database"></i> DB: MySQL</li>
+</ul>
+<hr>
 <h4>Education</h4>
-<li>Seoul National University (Seoul, South Korea) - Summa Cum Laude</li>
 <ul>
-  <li>Business administration, B. S. (GPA 4/4.3)      March 2011 - June 2017</li>
-  <li>Entrepreneurship, B. S. (GPA 4.11/4.3)      July 2014 - June 2017</li>
+<li><i class="fa fa-university"></i> Seoul National University (Seoul, South Korea) - Summa Cum Laude</li>
+<ol>
+  <li>- <span class="highlight">Business administration</span>, B. S. (GPA 4/4.3)      March 2011 - June 2017</li>
+  <li>- <span class="highlight">Entrepreneurship</span>, B. S. (GPA 4.11/4.3)      July 2014 - June 2017</li>
+</ol>
+<li><i class="fa fa-university"></i> Shanghai Jiao Tong University (Shanghai, China)   September 2015 - January 2016</li>
+<ol>
+<li>- 2015 Fall semester <span class="highlight">exchange student</span></li>
+</ol>
 </ul>
-<li>Shanghai Jiao Tong University (Shanghai, China)   September 2015 - January 2016</li>
-<ul>
-<li>2015 Fall semester exchange student</li>
-</ul>
-
+<hr>
 <h4>Work Experience</h4>
-<table class="table table-hover">
+<table class="table table-condensed">
 <tr>
-<td><a target="_blank" href="http://springcamp.co">Spring Camp (Venture Capital)</a></td>
+<th>Company</th>
+<th>Position</th>
+<th>Term</th>
+</tr>
+<tr>
+<td><a target="_blank" href="http://springcamp.co"><span class="highlight">Spring Camp</span> (Venture Capital)</a></td>
 <td>Associate</td>
 <td>February 2017 - Present</td>
 </tr>
 <tr>
-<td><a target="_blank" href="https://seoulprice.com">Seoulprice (start-up)</a></td>
+<td><a target="_blank" href="https://seoulprice.com"><span class="highlight">Seoulprice</span> (start-up)</a></td>
 <td>CEO &amp; CTO</td>
 <td>March 2016 - January 2017</td>
 </tr>
@@ -85,7 +136,7 @@
 <td>October 2012 - July 2014</td>
 </tr>
 <tr>
-<td>Education Vision Agency (start-up)</td>
+<td><span class="highlight">Education Vision Agency</span> (start-up)</td>
 <td>CEO</td>
 <td>September 2012 - November 2013</td>
 </tr>
@@ -96,15 +147,36 @@
 </tr>
 </table>
 
+<hr>
 <h4>Project &amp; Leadership</h4>
-<table class="table table-hover">
+<table class="table table-condensed">
+<tr>
+<th>Project</th>
+<th>Position</th>
+<th>Term</th>
+</tr>
+<tr>
+<td><a target="_blank" href="https://www.facebook.com/1day1ted/?fref=ts"><span class="highlight">1Day1Ted</span></a></td>
+<td>Founder</td>
+<td>February 2017 - </td>
+</tr>
+<tr>
+  <td><a target="_blank" href="https://brunch.co.kr/@entrepreneur">Essay about Entrepreneurship</a></td>
+  <td>Brunch <span class="highlight">Writer</span></td>
+  <td>December 2016 - </td>
+</tr>
+<tr>
+<td>Earlybird for MOOC</td>
+<td>Developer</td>
+<td>January 2017 - </td>
+</tr>
 <tr>
 <td><a target="_blank" href="http://entrepreneurship.snu.ac.kr/">Entrepreneurship major</a></td>
-<td>Student President</td>
+<td><span class="highlight">Student President</span></td>
 <td>September 2014 - June 2015</td>
 </tr>
 <tr>
-<td><a target="_blank"  href="http://p-rogramming.net/">P.rogramming</a></td>
+<td><a target="_blank"  href="http://p-rogramming.net/"><span class="highlight">P.rogramming</span></a></td>
 <td>co-Founder</td>
 <td>December 2014 -</td>
 </tr>
@@ -124,46 +196,37 @@
 <td>September 2015 - January 2016</td>
 </tr>
 <tr>
-<td>Entrepreneurship in Silicon Valley</td>
+<td>Entrepreneurship in <span class="highlight">Silicon Valley</span></td>
 <td>TF</td>
 <td>February 2015</td>
 </tr>
 </table>
 
+<hr>
 <h4>Outsourcing project</h4>
-<table class="table table-hover">
-  <tr>
-    <td>Enactus Songilbus</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Chinese first-class tour guide (service closed)</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><a target="_blank" href="http://snuventure.com">SNU Venture community</a></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><a target="_blank" href="http://thehwaesik.com">Thehwaesik web service</a></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Itzbook (start-up)</td>
-    <td>September 2015 - December 2015</td>
-  </tr>
-</table>
+<ul>
+<li><i class="fa fa-code"></i> Enactus Songilbus</li>
+<li><i class="fa fa-code"></i> Chinese first-class tour guide (service closed)</li>
+<li><a target="_blank" href="http://snuventure.com"><i class="fa fa-code"></i> SNU Venture community</a></li>
+<li><a target="_blank" href="http://thehwaesik.com"><i class="fa fa-code"></i> Thehwaesik web service</a></li>
+<li><i class="fa fa-code"></i> Itzbook (start-up)</li>
+</ul>
 
-
+<hr>
 <h4>Volunteer Activity</h4>
-<table class="table table-hover">
+<table class="table table-condensed">
+  <tr>
+    <th>Activity</th>
+    <th>Position</th>
+    <th>Term</th>
+  </tr>
   <tr>
     <td>Education Donation Expo</td>
     <td>Consulting team leader</td>
     <td>September 2014</td>
   </tr>
   <tr>
-    <td>Global Mentoring, Osaka</td>
+    <td><span class="highlight">Global Mentoring</span>, Osaka</td>
     <td>Team member</td>
     <td>July 2014</td>
   </tr>
@@ -174,12 +237,26 @@
   </tr>
 </table>
 
+<hr>
 <h4>Awards &amp; Certifications</h4>
-<li>Microsoft Office Specialist (Excel, Word, Powerpoint)</li>
-<li>Minister Award from Ministry of ICT and future planning</li>
+<ul>
+<li><i class="fa fa-folder-open"></i> Microsoft Office Specialist (Excel, Word, Powerpoint)</li>
+<li><i class="fa fa-graduation-cap"></i> Minister Award from Ministry of ICT and future planning</li>
+</ul>
 
-
+<hr>
+<h4>Contact</h4>
+<ul>
+<li><i class="fa fa-envelope"></i> Email: <a href="mailto:kmn1120@naver.com">kmn1120@naver.com</a></li>
+<li><i class="fa fa-phone"></i> Tel: +82 10 4580 4121</li>
+<li><i class="fa fa-facebook"></i> Facebook: <a target="_blank" href="https://www.facebook.com/shangyup.kim">https://www.facebook.com/shangyup.kim</a></li>
+<li><i class="fa fa-github"></i> Github: <a target="_blank" href="https://github.com/kimshangyup/">https://github.com/kimshangyup/</a></li>
+<li><i class="fa fa-linkedin"></i> Linkedin : <a target="_blank"  href="https://www.linkedin.com/in/shangyup-kim-010b21112/">https://www.linkedin.com/in/shangyup-kim-010b21112/</a></li>
+</ul>
+<br>
+Last updated : May 6th
 </div>
 
+<br>
 </body>
 </html>
