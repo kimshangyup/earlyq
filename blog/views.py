@@ -1,72 +1,44 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from blog.forms import PostForm, EmailForm
-from blog.models import Post
-from django.views.decorators.csrf import csrf_protect
+from django.http import HttpResponse, HttpResponseRedirect, Http404, JsonResponse
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
+from django.contrib.auth.decorators import login_required
+from .models import Question
+from .forms import QuestionForm
 
 
-def yoonzi(request):
-    return render(request, 'yoonzi.html', locals())
-
-
-def yoonzi1(request):
-    return render(request, 'yoonzi1.html', locals())
-
-
-def yoonzi2(request):
-    return render(request, 'yoonzi2.html', locals())
-
-
-def yoonzi3(request):
-    return render(request, 'yoonzi3.html', locals())
-
-
-def yoonzi4(request):
-    return render(request, 'yoonzi4.html', locals())
-
-
-def yoonzi5(request):
-    return render(request, 'yoonzi5.html', locals())
-
-
-@csrf_protect
 def index(request):
-    form = PostForm(request.POST or None)
-    emailform = EmailForm()
-    posts = Post.objects.all()[::-1]
-    if request.method == "POST":
-        if form.is_valid():
-            form.save()
-            return render(request, 'index.html', locals())
-        else:
-            return HttpResponse('error')
-    else:
-        return render(request, 'index.html', locals())
+    questions = Question.objects.all()
+    return render(request, 'blog/index.html', locals())
 
 
-@csrf_protect
-def test(request):
-    form = PostForm(request.POST or None)
-    emailform = EmailForm()
-    posts = Post.objects.all()[::-1]
-    if request.method == "POST":
-        if form.is_valid():
-            form.save()
-            return render(request, 'test.html', locals())
-        else:
-            return HttpResponse('error')
-    else:
-        return render(request, 'test.html', locals())
+def search(request):
+    q = request.GET.get('q')
+    questions = Question.objects.filter(text__icontains=q)
+    return render(request, 'blog/index.html', locals())
 
 
-@csrf_protect
-def email(request):
-    form = EmailForm(request.POST)
-    if request.method == "POST":
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/blog')
-        else:
-            return HttpResponse('error')
-    else:
-        return HttpResponse('error')
+@csrf_exempt
+@login_required
+def write(request):
+    if not request.is_ajax():
+        raise Http404('error')
+    text = request.POST.get('new_question')
+    author = request.user
+    q = Question.objects.create(text=text, author=author)
+    response_data = {
+        'text': text,
+        'author': author.username,
+        'id': q.id
+    }
+    return JsonResponse(response_data)
+
+
+@csrf_exempt
+@login_required
+def delete(request, pk):
+    if not request.is_ajax():
+        raise Http404('error')
+    q = Question.objects.get(id=pk)
+    q.delete()
+    response_data = {}
+    return JsonResponse(response_data)

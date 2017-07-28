@@ -1,6 +1,8 @@
 from django.contrib import admin
-from blog.models import Post, Email
+from .models import Question
+
+admin.site.register(Question)
 
 
-admin.site.register(Post)
-admin.site.register(Email)
+
+

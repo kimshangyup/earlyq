@@ -1,0 +1,112 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<style>
+div.left{
+	width:70%;
+	display:inline-block;
+}
+div.right{
+	width:30%;
+	display:inline-block;
+	text-align:right;
+}
+.delete{
+	color:red;
+}
+</style>	
+{% endblock head %}
+{% block body %}	
+<div class="center">
+<h4>Questions</h4>
+</div>
+{% for question in questions %}
+<div class="panel panel-default" id="{{ question.id }}">
+	<div class="panel-body">
+		<div class="left">
+		{{ question.text }}
+		</div>
+		<div class="right">
+			by {{ question.author }}
+			<br>
+			{% if request.user.is_staff or request.user == question.author %}
+			<span class="delete">Delete</span>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% empty %}
+<div class="panel panel-default">
+	<div class="panel-body">
+		아직 질문이 없습니다.
+	</div>
+</div>
+{% endfor %}
+
+<input type="text" id="new_question" class="form-control" placeholder="# new text">	
+<div id="send" class="btn btn-default">Send</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#send').on('click', function(){
+		create_question();
+	})
+
+	$('#new_question').on('keyup', function(e){
+		if(e.keyCode==13){
+			create_question();
+		}
+	})
+	var validate_blank = function(){
+		if($('#new_question').val() == ''){
+			return false
+		}
+		else{
+			return true
+		}
+	}
+	var create_question = function(){
+		if(validate_blank()){
+		var new_question = $('#new_question').val();
+		$.ajax({
+			url:'/blog/write/',
+			type:'POST',
+			data:{
+				new_question: new_question,
+			},
+			success:function(msg){
+				var $question = "<div class='panel panel-default' id='"+msg.id+"'><div class='panel-body'><div class='left'>";
+				$question += msg.text;
+				$question += "</div><div class='right'>by ";
+				$question += msg.author;
+				$question += "<br><span class='delete'>Delete</span></div></div></div>"
+				$('#new_question').before($question);
+			},
+			error:function(msg){
+				console.log(msg);
+			}
+		})
+		$('#new_question').val('');
+		}
+	}
+
+	$(document).on('click', '.delete', function(e){
+		var $this = $(this).parent().parent().parent();
+		$.ajax({
+			url:'/blog/delete/'+$this.attr('id')+'/',
+			type:'POST',
+			data:{
+				
+			},
+			success:function(msg){
+				$this.remove();
+			},
+			error:function(msg){
+				console.log(msg);
+			}
+		})
+	})
+})
+</script>
+{% endblock body %}
