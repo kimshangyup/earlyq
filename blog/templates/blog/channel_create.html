@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h4>Create Group</h4>
+<hr>
+
+<form action="" method="post">
+{% csrf_token %}
+<table class="table">
+{{ channel_form.as_table }}
+</table>
+<button class="btn btn-default">Done</button>
+</form>
+{% endblock body %}

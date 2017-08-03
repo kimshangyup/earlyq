@@ -17,6 +17,11 @@ div.right{
 </style>	
 {% endblock head %}
 {% block body %}	
+
+<span class="right">
+<a href="/blog/delete/{{ channel.id }}">그룹 삭제</a>
+</span>
+<br>
 <div class="center">
 <h4>Questions</h4>
 </div>
@@ -27,7 +32,12 @@ div.right{
 		{{ question.text }}
 		</div>
 		<div class="right">
-			by {{ question.author }}
+			by 
+			{% if question.is_anonymous %}
+			anonymous
+			{% else %}
+			{{ question.author }}
+			{% endif %}
 			<br>
 			{% if request.user.is_staff or request.user == question.author %}
 			<span class="delete">Delete</span>
@@ -36,15 +46,14 @@ div.right{
 	</div>
 </div>
 {% empty %}
-<div class="panel panel-default">
-	<div class="panel-body">
-		아직 질문이 없습니다.
-	</div>
-</div>
+
+
 {% endfor %}
+
 
 <input type="text" id="new_question" class="form-control" placeholder="# new text">	
 <div id="send" class="btn btn-default">Send</div>
+Anonymous <input type="checkbox" id="is_anonymous">
 
 
 <script type="text/javascript">
@@ -68,12 +77,16 @@ $(document).ready(function(){
 	}
 	var create_question = function(){
 		if(validate_blank()){
+		var is_anonymous;
 		var new_question = $('#new_question').val();
+		if($('#is_anonymous').prop('checked')){is_anonymous=1}else{is_anonymous=0};
 		$.ajax({
 			url:'/blog/write/',
 			type:'POST',
 			data:{
 				new_question: new_question,
+				channel_id: {{ channel.id }},
+				is_anonymous: is_anonymous,
 			},
 			success:function(msg){
 				var $question = "<div class='panel panel-default' id='"+msg.id+"'><div class='panel-body'><div class='left'>";
@@ -94,7 +107,7 @@ $(document).ready(function(){
 	$(document).on('click', '.delete', function(e){
 		var $this = $(this).parent().parent().parent();
 		$.ajax({
-			url:'/blog/delete/'+$this.attr('id')+'/',
+			url:'/blog/remove/'+$this.attr('id')+'/',
 			type:'POST',
 			data:{
 				

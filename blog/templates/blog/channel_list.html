@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<style>
+.col-xs-6{
+	padding:5px;
+}
+.square{
+	border:1px solid gray;
+	padding:10px;
+	height:180px;
+}
+#create_btn{
+	border:1px dashed gray;
+	text-align:center;
+	padding-top:75px;
+}
+</style>
+
+{% endblock head %}
+{% block body %}
+
+<div class="row">
+	<h4> Joined Group</h4>
+	<hr>
+	{% for channel in channels %}
+	<div class="col-xs-6">
+		<a href="/blog/channel/{{ channel.id }}/">
+			<div class="square">
+				<h4>{{ channel.title }}
+				<span class="right">{{ channel.creator.username }}</span>
+				</h4> 
+				<br>
+				<p>{{ channel.description }}</p>
+				<span class="right">New {{ channel.questions.count }}</span>
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+	<div class="col-xs-6">
+		<a href="/blog/create">
+			<div class="square" id="create_btn">
+				Create Group
+			</div>
+		</a>
+	</div>
+</div>
+
+<div class="row">
+<br>
+<h4> New Group</h4>
+<hr>
+
+</div>
+{% endblock body %}

@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body %}	
+
+<h4>{{ user }}'s Profile</h4>
+<hr>
+
+nickname : {{ user.profile.nickname }}
+<br>
+<a href="/accounts/logout">Logout</a>
+
+
+{% endblock body %}

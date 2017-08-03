@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -83,6 +84,7 @@ DATABASES = {
 }
 
 
+LOGIN_REDIRECT_URL = '/'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -107,4 +109,6 @@ STATICFILES_DIRS = (
 )
 
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
