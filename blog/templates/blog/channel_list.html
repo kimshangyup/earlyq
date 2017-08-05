@@ -28,7 +28,7 @@
 		<a href="/blog/channel/{{ channel.id }}/">
 			<div class="square">
 				<h4>{{ channel.title }}
-				<span class="right">{{ channel.creator.username }}</span>
+				<span class="right">{{ channel.creator.profile }}</span>
 				</h4> 
 				<br>
 				<p>{{ channel.description }}</p>
@@ -50,6 +50,12 @@
 <br>
 <h4> New Group</h4>
 <hr>
+<form action="/blog/search" method="get">
+<input type="text" class="form-control" name="q" placeholder="질문을 검색하세요">
+<button class="btn btn-default">검색</button>
+</form>
+
+
 
 </div>
 {% endblock body %}

@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
-
+from django.forms import TextInput
 
 # class LoginForm(AuthenticationForm):
 #     email = forms.EmailField(label='이메일')
@@ -11,6 +11,19 @@ from .models import Profile
 #         if answer != '6':
 #             raise forms.ValidationError('땡~!!!')
 #         return answer
+
+
+
+class ProfileForm(forms.ModelForm):
+
+    class Meta:
+        model = Profile
+        fields = ('nickname', 'thumbnail',)
+        widgets = {
+            'nickname': TextInput(),
+            # 'thumbnail': Select(choices=location_option, attrs={'class': 'form-control'})
+        }
+
 
 
 class SignupForm(UserCreationForm):

@@ -4,9 +4,20 @@
 <h4>{{ user }}'s Profile</h4>
 <hr>
 
-nickname : {{ user.profile.nickname }}
+<form action="" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+nickname : {{ form.nickname }} <br>
+{{ form.thumbnail }}
 <br>
+<button type="submit">수정하기 </button><hr>
 <a href="/accounts/logout">Logout</a>
+</form>
 
+<script>
+{% if message %}
+alert('{{ message }}')
+{% endif %}
+
+</script>
 
 {% endblock body %}

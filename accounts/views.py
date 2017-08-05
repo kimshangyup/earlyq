@@ -1,10 +1,10 @@
 from django.conf import settings
 from django.shortcuts import redirect, render
-from .forms import SignupForm
+from .forms import SignupForm, ProfileForm
+from .models import Profile
 from django.contrib.auth.decorators import login_required
 
 
-@login_required
 def signup(request):
 	if request.method == 'POST':
 		form = SignupForm(request.POST)
@@ -18,5 +18,15 @@ def signup(request):
 	})
 
 
+@login_required
 def profile(request):
-	return render(request, 'accounts/profile.html')
+	form = ProfileForm(request.POST or None, request.FILES or None, instance=Profile.objects.get(user=request.user))
+	if request.method == "POST":
+		if form.is_valid():
+			form.save()
+			message = "성공적으로 반영되었습니다"
+		else:
+			return HttpResponse('error')
+	else:
+		pass
+	return render(request, 'accounts/profile.html', locals())

@@ -8,3 +8,8 @@ class Profile(models.Model):
 	thumbnail = models.ImageField(null=True, blank=True)
 	# email = models.EmailField(max_length=100)
 
+	def __str__(self):
+		if self.nickname and self.nickname is not '':
+			return self.nickname
+		else:
+			return self.user.username

@@ -62,7 +62,10 @@ def write(request):
     if is_anonymous == '1':
         name = 'anonymous'
     else:
-        name = author.username
+        if author.profile.nickname and author.profile.nickname is not '':
+            name = author.profile.nickname
+        else:
+            name = author.username
     q = Question.objects.create(text=text, author=author, channel=channel, is_anonymous=is_anonymous)
     response_data = {
         'text': text,

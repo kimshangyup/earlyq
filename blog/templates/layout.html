@@ -27,6 +27,8 @@
 }
 .profile{
   border-radius:100%;
+  width:45px;
+  height:45px;
 }
 .profile-container{
   padding:10px;
@@ -45,14 +47,15 @@
 <body>
 
 <div class="container">
+<a href="/">earlybird</a>
 <div class="right profile-container">
 {% if request.user.is_authenticated %}
   <a href="/accounts/profile">
-    {{ request.user.username }}
+    {{ request.user.profile }}
     <img class="profile" src="{% if request.user.profile.thumbnail %}{{ request.user.profile.thumbnail.url }}{% else %}{% static 'no.jpg' %}{% endif %}" alt="">
   </a>
 {% else %}
-  Login
+  <a href="/accounts/login">Login</a>
 {% endif %}
 
 </div>

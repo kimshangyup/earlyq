@@ -18,6 +18,8 @@ div.right{
 {% endblock head %}
 {% block body %}	
 
+
+<h4>{{ channel.title }}</h4>
 <span class="right">
 <a href="/blog/delete/{{ channel.id }}">그룹 삭제</a>
 </span>
@@ -36,7 +38,7 @@ div.right{
 			{% if question.is_anonymous %}
 			anonymous
 			{% else %}
-			{{ question.author }}
+			{{ question.author.profile }}
 			{% endif %}
 			<br>
 			{% if request.user.is_staff or request.user == question.author %}
