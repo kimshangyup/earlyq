@@ -6,6 +6,7 @@ from .models import Question, Channel
 from .forms import QuestionForm, ChannelForm
 
 
+@login_required
 def channel_list(request):
     channels = Channel.objects.all()
     return render(request, 'blog/channel_list.html', locals())
@@ -37,6 +38,7 @@ def channel_delete(request, pk):
         return HttpResponse('이 채널을 삭제할 권한이 없습니다')
 
 
+@login_required
 def question_list(request, channel_pk):
     questions = Question.objects.filter(channel=channel_pk)
     channel = Channel.objects.get(id=channel_pk)
