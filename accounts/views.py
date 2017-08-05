@@ -2,6 +2,7 @@ from django.conf import settings
 from django.shortcuts import redirect, render
 from .forms import SignupForm, ProfileForm
 from .models import Profile
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 
@@ -10,6 +11,10 @@ def signup(request):
 		form = SignupForm(request.POST)
 		if form.is_valid():
 			created_user = form.save()
+			username = form.cleaned_data.get('username')
+			raw_password = form.cleaned_data.get('password1')
+			user = authenticate(username=username, password=raw_password)
+			login(request, user)
 			return redirect(settings.LOGIN_REDIRECT_URL)
 	else:
 		form = SignupForm()
