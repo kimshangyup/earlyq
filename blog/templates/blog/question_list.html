@@ -14,8 +14,13 @@ div.right{
 .delete{
 	color:red;
 }
+.gray{
+	color:gray;
+	font-size:12px;
+}
 </style>	
 {% endblock head %}
+
 {% block body %}	
 
 
@@ -32,6 +37,10 @@ div.right{
 	<div class="panel-body">
 		<div class="left">
 		{{ question.text }}
+		<br>
+		<span class="gray">
+			{{ question.created }}
+		</span>
 		</div>
 		<div class="right">
 			by 
