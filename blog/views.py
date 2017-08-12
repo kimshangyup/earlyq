@@ -8,6 +8,7 @@ from .forms import QuestionForm, ChannelForm
 
 @login_required
 def channel_list(request):
+    joined = request.user.members.all()
     channels = Channel.objects.all()
     return render(request, 'blog/channel_list.html', locals())
 
@@ -42,6 +43,7 @@ def channel_delete(request, pk):
 def question_list(request, channel_pk):
     questions = Question.objects.filter(channel=channel_pk)
     channel = Channel.objects.get(id=channel_pk)
+    channel.member.add(request.user)
     return render(request, 'blog/question_list.html', locals())
 
 
@@ -72,7 +74,8 @@ def write(request):
     response_data = {
         'text': text,
         'author': name,
-        'id': q.id
+        'id': q.id,
+        'created':q.created
     }
     return JsonResponse(response_data)
 

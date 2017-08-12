@@ -7,7 +7,11 @@ class Channel(models.Model):
 	title = models.CharField(max_length=255, verbose_name="그룹 이름")
 	description = models.CharField(max_length=255, verbose_name="그룹 소개")
 	creator = models.ForeignKey(User)
+	member = models.ManyToManyField(User, related_name="members")
 	color = models.CharField(max_length=10, verbose_name="색")
+
+	def __str__(self):
+		return self.title
 
 
 class Question(models.Model):

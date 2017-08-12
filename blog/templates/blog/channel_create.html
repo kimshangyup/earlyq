@@ -1,15 +1,74 @@
 {% extends 'layout.html' %}
 
+{% block head %}
+<style>
+.input_container{
+	text-align: center;
+}
+input{
+	border:none;
+	border-bottom:1px solid #ddd;
+	height:35px;
+	width:200px;
+}
+::-webkit-input-placeholder { color: #ccc; }
+/* Firefox 4-18 */
+:-moz-placeholder { color: #ccc; }
+
+/* Firefox 19+ */
+::-moz-placeholder { color: #ccc; }
+
+/* IE10+ */
+:-ms-input-placeholder { color: #ccc; } 
+select{
+	width:200px;
+	height:35px;
+}
+</style>	
+{% endblock head %}
 {% block body %}
 
+<div class="row">
 <h4>Create Group</h4>
-<hr>
 
+<div class="center">Preview</div>
+<br>
+<div class="col-xs-6 col-xs-offset-3">
+<div class="square blue">
+	<h4 id="name">Group Name</h4>
+	<p id="description">Group Description</p>
+	<span class="right bottom">
+		New 0
+	</span>
+</div>
+</div>
+</div>
+<br>
+<div class="center">
+	Group Info
+</div>
 <form action="" method="post">
 {% csrf_token %}
-<table class="table">
-{{ channel_form.as_table }}
-</table>
-<button class="btn btn-default">Done</button>
+<div class="input_container">
+{{ channel_form.title }} <br>
+{{ channel_form.description }} <br>
+{{ channel_form.color }} <br><br>
+<button id="signin">Done</button>
+</div>
 </form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#id_title').on('keyup',function(e){
+		$('#name').html($(this).val())
+	})
+	$('#id_description').on('keyup',function(e){
+		$('#description').html($(this).val())
+	})
+	$('#id_color').on('change',function(){
+		$('.square').attr('class', 'square '+$(this).val());
+	})
+})
+</script>
+
 {% endblock body %}
