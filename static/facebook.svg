@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1477.195 476.215 56.771 56.771">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3c5a96;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="페이스북" transform="translate(1477.195 476.215)">
+    <ellipse id="타원_24" data-name="타원 24" class="cls-1" cx="28.385" cy="28.385" rx="28.385" ry="28.385" transform="translate(0 0)"/>
+    <path id="f_1_" class="cls-2" d="M9.5,28.185V15.324h4.316l.647-5.013H9.5v-3.2c0-1.455.4-2.438,2.488-2.438H14.64V.2A35.168,35.168,0,0,0,10.772,0C6.941,0,4.329,2.338,4.329,6.617v3.694H0v5.013H4.329V28.185Z" transform="translate(21.065 14.784)"/>
+  </g>
+</svg>

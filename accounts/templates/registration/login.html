@@ -1,16 +1,93 @@
 {% extends 'layout.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<style>
+.icon{
+	width:20px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+	border-top:none;
+	border-bottom:1px solid #eee;
+}
+input{
+	width:100%;
+	height:30px;
+	border:none;
+}
+#signin{
+	background-color:white;
+	border:1px solid blue;
+	color:blue;
+	font-weight:bold;
+	border-radius:15px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.big_icon{
+	width:50px;
+	cursor:pointer;
+}
+.container_small{
+	width:300px;
+	margin: 0 auto;
+}
+
+</style>
+{% endblock head %}
+
 {% block body %}
+
 
 <div class="center">
 <br><br><br><br><br><br>
 <form action="" method="post">
     {% csrf_token %}
-    <input type="text" name="username" autofocus="" maxlength="254" required="" id="id_username" placeholder="E-mail"> <br>
-    <input type="password" name="password" required="" id="id_password" placeholder="Password"><br>
-    <button>Sign in</button>
+    <table class="table">
+    <tr>
+	    <td>
+	    	<img class="icon" src="{% static 'email.svg' %}" alt="">
+	    </td>
+	    <td>
+	    	<input type="text" name="username" autofocus="" maxlength="254" required="" id="id_username" placeholder=" E-mail">
+	    </td>
+	</tr>
+    <tr>
+	    <td>
+	    	<img class="icon" src="{% static 'password.svg' %}" alt="">
+	    </td>
+	    <td>
+	    	<input type="password" name="password" required="" id="id_password" placeholder=" Password">	
+	    </td>
+	</tr>
+    </table>
+    <button id="signin" type="submit">Sign in</button>
 </form>
 <br>
-<a href="/accounts/signup">Create Account</a>
+
+<br><br>
+<br>
+Sign with
+<br><br>
+<div class="container_small">
+<div class="col-xs-4">
+	<img src="{% static 'kakao.svg' %}" alt="" class="big_icon"><br><br>
+	카카오톡
 </div>
+<div class="col-xs-4">
+	<img src="{% static 'facebook.svg' %}" alt="" class="big_icon"><br><br>
+	페이스북
+</div>
+<a href="/accounts/signup">
+<div class="col-xs-4">
+	<img src="{% static 'elogin.svg' %}" alt="" class="big_icon"><br><br>
+	이메일 가입
+</div>
+</a>
+</div>
+
+</div>
+
+
 
 {% endblock body %}
